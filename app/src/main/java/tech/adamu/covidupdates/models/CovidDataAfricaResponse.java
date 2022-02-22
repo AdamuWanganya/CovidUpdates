@@ -6,10 +6,12 @@ package tech.adamu.covidupdates.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.io.Serializable;
+
 //import javax.annotation.Generated;
 
 //@Generated("jsonschema2pojo")
-public class CovidDataAfricaResponse {
+public class CovidDataAfricaResponse implements Serializable {
 
     @SerializedName("id")
     @Expose

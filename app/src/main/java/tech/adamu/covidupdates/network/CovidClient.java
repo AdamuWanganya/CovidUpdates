@@ -1,4 +1,4 @@
-package tech.adamu.covidupdates.models;
+package tech.adamu.covidupdates.network;
 
 import java.io.IOException;
 
