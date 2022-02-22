@@ -28,6 +28,30 @@ android {
 }
 
 dependencies {
+    implementation platform('com.google.firebase:firebase-bom:29.1.0')
+//  Importing firebase analytics
+    implementation 'com.google.firebase:firebase-analytics'
+//    Importing firebase database
+    implementation 'com.google.firebase:firebase-database'
+//    Importin material dependencies
+    implementation "com.google.android.material:material:1.5.0"
+//    importing Firebase auth
+    implementation 'com.google.firebase:firebase-auth'
+    //Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    //recylerview
+    implementation 'androidx.recyclerview:recyclerview:1.2.1'
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
+
+    //ButterKnife dependencies
+    implementation 'com.jakewharton:butterknife:10.2.3'
+    implementation 'com.google.android.gms:play-services-games:22.0.1'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'com.google.firebase:firebase-database:20.0.3'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:10.2.3'
+
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
     implementation 'com.google.android.material:material:1.5.0'
