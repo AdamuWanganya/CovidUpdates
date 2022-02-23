@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "664424504424",
+    "project_id": "covidupdates-8d926",
+    "storage_bucket": "covidupdates-8d926.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:664424504424:android:43a246ebc92aebf107efdd",
+        "android_client_info": {
+          "package_name": "tech.adamu.covidupdates"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "664424504424-9emmhd1pkfbiif9q77oqnh1c4vuvu44m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "tech.adamu.covidupdates",
+            "certificate_hash": "076da19554b0d402aee5caceef43051af343c3a6"
+          }
+        },
+        {
+          "client_id": "664424504424-dtrr89tnk9lke0s93q24jjfjg0novms5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT09IR-6O_9aA-Ny6J34ng8KLkXqlyXgU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "664424504424-dtrr89tnk9lke0s93q24jjfjg0novms5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

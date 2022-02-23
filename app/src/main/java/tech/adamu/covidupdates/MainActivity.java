@@ -1,9 +1,9 @@
 package tech.adamu.covidupdates;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
-import android.app.Fragment;
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
@@ -27,11 +27,13 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        titles.add("Country Information");
-        titles.add("Treatment Information");
-        titles.add("Favorites");
+        titles.add("Country Updates");
+        titles.add("Vaccine News");
+        titles.add("Favorite News");
 
         fragments.add(new  CountryFragment());
+        fragments.add(new VaccineFragment());
+        fragments.add(new FavoriteFragment());
 //        TODO add fragments for Treatment Infor and Favorite;
 
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(),fragments,titles);

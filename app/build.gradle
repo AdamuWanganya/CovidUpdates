@@ -14,12 +14,16 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
     }
+    buildFeatures {
+        dataBinding = true
+    }
 
     buildTypes {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -28,7 +32,7 @@ android {
 }
 
 dependencies {
-    implementation platform('com.google.firebase:firebase-bom:29.1.0')
+   implementation platform('com.google.firebase:firebase-bom:29.1.0')
 //  Importing firebase analytics
     implementation 'com.google.firebase:firebase-analytics'
 //    Importing firebase database

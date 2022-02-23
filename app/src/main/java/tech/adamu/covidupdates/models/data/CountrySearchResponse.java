@@ -2,29 +2,17 @@
 package tech.adamu.covidupdates.models.data;
 
 //import javax.annotation.Generated;
-
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
 import java.io.Serializable;
 
-//import javax.annotation.Generated;
-
 //@Generated("jsonschema2pojo")
-public class CovidDataAfricaResponse implements Serializable {
+public class CountrySearchResponse implements Serializable {
 
-    @SerializedName("id")
-    @Expose
-    private String id;
-    @SerializedName("rank")
-    @Expose
-    private Integer rank;
     @SerializedName("Country")
     @Expose
     private String country;
-    @SerializedName("Continent")
-    @Expose
-    private String continent;
     @SerializedName("TwoLetterSymbol")
     @Expose
     private String twoLetterSymbol;
@@ -33,16 +21,16 @@ public class CovidDataAfricaResponse implements Serializable {
     private String threeLetterSymbol;
     @SerializedName("Infection_Risk")
     @Expose
-    private Integer infectionRisk;
+    private Double infectionRisk;
     @SerializedName("Case_Fatality_Rate")
     @Expose
-    private Integer caseFatalityRate;
+    private Double caseFatalityRate;
     @SerializedName("Test_Percentage")
     @Expose
-    private Integer testPercentage;
+    private Double testPercentage;
     @SerializedName("Recovery_Proporation")
     @Expose
-    private Integer recoveryProporation;
+    private Double recoveryProporation;
     @SerializedName("TotalCases")
     @Expose
     private Integer totalCases;
@@ -57,7 +45,7 @@ public class CovidDataAfricaResponse implements Serializable {
     private Integer newDeaths;
     @SerializedName("TotalRecovered")
     @Expose
-    private String totalRecovered;
+    private Integer totalRecovered;
     @SerializedName("NewRecovered")
     @Expose
     private Integer newRecovered;
@@ -66,74 +54,44 @@ public class CovidDataAfricaResponse implements Serializable {
     private Integer activeCases;
     @SerializedName("TotalTests")
     @Expose
-    private String totalTests;
+    private Integer totalTests;
     @SerializedName("Population")
     @Expose
-    private String population;
-    @SerializedName("one_Caseevery_X_ppl")
-    @Expose
-    private Integer oneCaseeveryXPpl;
-    @SerializedName("one_Deathevery_X_ppl")
-    @Expose
-    private Integer oneDeatheveryXPpl;
-    @SerializedName("one_Testevery_X_ppl")
-    @Expose
-    private Integer oneTesteveryXPpl;
-    @SerializedName("Deaths_1M_pop")
-    @Expose
-    private Integer deaths1MPop;
+    private Integer population;
     @SerializedName("Serious_Critical")
     @Expose
     private Integer seriousCritical;
-    @SerializedName("Tests_1M_Pop")
-    @Expose
-    private Integer tests1MPop;
-    @SerializedName("TotCases_1M_Pop")
-    @Expose
-    private Integer totCases1MPop;
 
     /**
      * No args constructor for use in serialization
      * 
      */
-    public CovidDataAfricaResponse() {
+    public CountrySearchResponse() {
     }
 
     /**
      * 
-     * @param continent
      * @param country
+     * @param threeLetterSymbol
      * @param caseFatalityRate
      * @param newCases
      * @param totalRecovered
-     * @param oneCaseeveryXPpl
      * @param recoveryProporation
-     * @param newRecovered
-     * @param totalDeaths
-     * @param seriousCritical
-     * @param rank
-     * @param id
-     * @param activeCases
-     * @param oneDeatheveryXPpl
-     * @param tests1MPop
-     * @param threeLetterSymbol
-     * @param oneTesteveryXPpl
      * @param totalTests
      * @param population
      * @param testPercentage
      * @param newDeaths
-     * @param totCases1MPop
-     * @param deaths1MPop
+     * @param newRecovered
+     * @param totalDeaths
+     * @param seriousCritical
      * @param infectionRisk
      * @param twoLetterSymbol
      * @param totalCases
+     * @param activeCases
      */
-    public CovidDataAfricaResponse(String id, Integer rank, String country, String continent, String twoLetterSymbol, String threeLetterSymbol, Integer infectionRisk, Integer caseFatalityRate, Integer testPercentage, Integer recoveryProporation, Integer totalCases, Integer newCases, Integer totalDeaths, Integer newDeaths, String totalRecovered, Integer newRecovered, Integer activeCases, String totalTests, String population, Integer oneCaseeveryXPpl, Integer oneDeatheveryXPpl, Integer oneTesteveryXPpl, Integer deaths1MPop, Integer seriousCritical, Integer tests1MPop, Integer totCases1MPop) {
+    public CountrySearchResponse(String country, String twoLetterSymbol, String threeLetterSymbol, Double infectionRisk, Double caseFatalityRate, Double testPercentage, Double recoveryProporation, Integer totalCases, Integer newCases, Integer totalDeaths, Integer newDeaths, Integer totalRecovered, Integer newRecovered, Integer activeCases, Integer totalTests, Integer population, Integer seriousCritical) {
         super();
-        this.id = id;
-        this.rank = rank;
         this.country = country;
-        this.continent = continent;
         this.twoLetterSymbol = twoLetterSymbol;
         this.threeLetterSymbol = threeLetterSymbol;
         this.infectionRisk = infectionRisk;
@@ -149,29 +107,7 @@ public class CovidDataAfricaResponse implements Serializable {
         this.activeCases = activeCases;
         this.totalTests = totalTests;
         this.population = population;
-        this.oneCaseeveryXPpl = oneCaseeveryXPpl;
-        this.oneDeatheveryXPpl = oneDeatheveryXPpl;
-        this.oneTesteveryXPpl = oneTesteveryXPpl;
-        this.deaths1MPop = deaths1MPop;
         this.seriousCritical = seriousCritical;
-        this.tests1MPop = tests1MPop;
-        this.totCases1MPop = totCases1MPop;
-    }
-
-    public String getId() {
-        return id;
-    }
-
-    public void setId(String id) {
-        this.id = id;
-    }
-
-    public Integer getRank() {
-        return rank;
-    }
-
-    public void setRank(Integer rank) {
-        this.rank = rank;
     }
 
     public String getCountry() {
@@ -180,14 +116,6 @@ public class CovidDataAfricaResponse implements Serializable {
 
     public void setCountry(String country) {
         this.country = country;
-    }
-
-    public String getContinent() {
-        return continent;
-    }
-
-    public void setContinent(String continent) {
-        this.continent = continent;
     }
 
     public String getTwoLetterSymbol() {
@@ -206,35 +134,35 @@ public class CovidDataAfricaResponse implements Serializable {
         this.threeLetterSymbol = threeLetterSymbol;
     }
 
-    public Integer getInfectionRisk() {
+    public Double getInfectionRisk() {
         return infectionRisk;
     }
 
-    public void setInfectionRisk(Integer infectionRisk) {
+    public void setInfectionRisk(Double infectionRisk) {
         this.infectionRisk = infectionRisk;
     }
 
-    public Integer getCaseFatalityRate() {
+    public Double getCaseFatalityRate() {
         return caseFatalityRate;
     }
 
-    public void setCaseFatalityRate(Integer caseFatalityRate) {
+    public void setCaseFatalityRate(Double caseFatalityRate) {
         this.caseFatalityRate = caseFatalityRate;
     }
 
-    public Integer getTestPercentage() {
+    public Double getTestPercentage() {
         return testPercentage;
     }
 
-    public void setTestPercentage(Integer testPercentage) {
+    public void setTestPercentage(Double testPercentage) {
         this.testPercentage = testPercentage;
     }
 
-    public Integer getRecoveryProporation() {
+    public Double getRecoveryProporation() {
         return recoveryProporation;
     }
 
-    public void setRecoveryProporation(Integer recoveryProporation) {
+    public void setRecoveryProporation(Double recoveryProporation) {
         this.recoveryProporation = recoveryProporation;
     }
 
@@ -270,11 +198,11 @@ public class CovidDataAfricaResponse implements Serializable {
         this.newDeaths = newDeaths;
     }
 
-    public String getTotalRecovered() {
+    public Integer getTotalRecovered() {
         return totalRecovered;
     }
 
-    public void setTotalRecovered(String totalRecovered) {
+    public void setTotalRecovered(Integer totalRecovered) {
         this.totalRecovered = totalRecovered;
     }
 
@@ -294,52 +222,20 @@ public class CovidDataAfricaResponse implements Serializable {
         this.activeCases = activeCases;
     }
 
-    public String getTotalTests() {
+    public Integer getTotalTests() {
         return totalTests;
     }
 
-    public void setTotalTests(String totalTests) {
+    public void setTotalTests(Integer totalTests) {
         this.totalTests = totalTests;
     }
 
-    public String getPopulation() {
+    public Integer getPopulation() {
         return population;
     }
 
-    public void setPopulation(String population) {
+    public void setPopulation(Integer population) {
         this.population = population;
-    }
-
-    public Integer getOneCaseeveryXPpl() {
-        return oneCaseeveryXPpl;
-    }
-
-    public void setOneCaseeveryXPpl(Integer oneCaseeveryXPpl) {
-        this.oneCaseeveryXPpl = oneCaseeveryXPpl;
-    }
-
-    public Integer getOneDeatheveryXPpl() {
-        return oneDeatheveryXPpl;
-    }
-
-    public void setOneDeatheveryXPpl(Integer oneDeatheveryXPpl) {
-        this.oneDeatheveryXPpl = oneDeatheveryXPpl;
-    }
-
-    public Integer getOneTesteveryXPpl() {
-        return oneTesteveryXPpl;
-    }
-
-    public void setOneTesteveryXPpl(Integer oneTesteveryXPpl) {
-        this.oneTesteveryXPpl = oneTesteveryXPpl;
-    }
-
-    public Integer getDeaths1MPop() {
-        return deaths1MPop;
-    }
-
-    public void setDeaths1MPop(Integer deaths1MPop) {
-        this.deaths1MPop = deaths1MPop;
     }
 
     public Integer getSeriousCritical() {
@@ -348,22 +244,6 @@ public class CovidDataAfricaResponse implements Serializable {
 
     public void setSeriousCritical(Integer seriousCritical) {
         this.seriousCritical = seriousCritical;
-    }
-
-    public Integer getTests1MPop() {
-        return tests1MPop;
-    }
-
-    public void setTests1MPop(Integer tests1MPop) {
-        this.tests1MPop = tests1MPop;
-    }
-
-    public Integer getTotCases1MPop() {
-        return totCases1MPop;
-    }
-
-    public void setTotCases1MPop(Integer totCases1MPop) {
-        this.totCases1MPop = totCases1MPop;
     }
 
 }

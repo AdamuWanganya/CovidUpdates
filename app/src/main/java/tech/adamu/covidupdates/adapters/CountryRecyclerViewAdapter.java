@@ -13,13 +13,14 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.List;
 
 import tech.adamu.covidupdates.R;
-import tech.adamu.covidupdates.models.data.CovidDataAfricaResponse;
+import tech.adamu.covidupdates.models.data.CountrySearchResponse;
 
-public class CovidRecyclerViewAdapter extends RecyclerView.Adapter<CovidRecyclerViewAdapter.ViewHolder> {
-    List<CovidDataAfricaResponse> dataList;
+
+public class CountryRecyclerViewAdapter extends RecyclerView.Adapter<CountryRecyclerViewAdapter.ViewHolder> {
+    List<CountrySearchResponse> dataList;
     Context context;
 
-    public CovidRecyclerViewAdapter(List<CovidDataAfricaResponse> dataList, Context context) {
+    public CountryRecyclerViewAdapter(List<CountrySearchResponse> dataList, Context context) {
         this.dataList = dataList;
         this.context = context;
     }
@@ -35,7 +36,8 @@ public class CovidRecyclerViewAdapter extends RecyclerView.Adapter<CovidRecycler
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         holder.countryName.setText(dataList.get(position).getCountry());
-        holder.countryStatistics.setText(dataList.get(position).getNewCases());
+        holder.countryStatistics.setText("Active Cases: " + dataList.get(position).getActiveCases().toString());
+//        holder.countryStatistics.setText(dataList.get(position).getNewDeaths());
        
     }
 
@@ -53,7 +55,7 @@ public class CovidRecyclerViewAdapter extends RecyclerView.Adapter<CovidRecycler
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             countryName = itemView.findViewById(R.id.country);
-            countryStatistics = itemView.findViewById(R.id.statistics);
+            countryStatistics = itemView.findViewById(R.id.stats);
             constraintLayout = itemView.findViewById(R.id.constraintLayout);
 
         }

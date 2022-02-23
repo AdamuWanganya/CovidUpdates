@@ -1,25 +1,26 @@
 package tech.adamu.covidupdates;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-import androidx.recyclerview.widget.LinearLayoutManager;
-import androidx.recyclerview.widget.RecyclerView;
-
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import tech.adamu.covidupdates.adapters.CovidRecyclerViewAdapter;
-import tech.adamu.covidupdates.models.data.CovidDataAfricaResponse;
+import tech.adamu.covidupdates.adapters.CountryRecyclerViewAdapter;
+import tech.adamu.covidupdates.models.data.CountrySearchResponse;
 import tech.adamu.covidupdates.network.CovidApi;
 import tech.adamu.covidupdates.network.CovidClient;
 
@@ -45,16 +46,21 @@ public class CountryFragment extends Fragment {
         recyclerView.setLayoutManager(linearLayoutManager);
 
         CovidApi covidApi = CovidClient.getClient();
-        Call<List<CovidDataAfricaResponse>> call = covidApi.getData();
+        Call<List<CountrySearchResponse>> call = covidApi.getData();
 
-        call.enqueue(new Callback<List<CovidDataAfricaResponse>>() {
+//        Toast.makeText(getContext(), "Country open", Toast.LENGTH_SHORT).show();
+
+        call.enqueue(new Callback<List<CountrySearchResponse>>() {
             @Override
-            public void onResponse(Call<List<CovidDataAfricaResponse>> call, Response<List<CovidDataAfricaResponse>> response) {
-                if (response.isSuccessful()) {
-                    List<CovidDataAfricaResponse> allData = response.body();
+            public void onResponse(Call<List<CountrySearchResponse>> call, Response<List<CountrySearchResponse>> response) {
 
-                    recyclerView.setAdapter(new CovidRecyclerViewAdapter(allData,getContext()));
-                    Toast.makeText(getContext(), "Successful", Toast.LENGTH_SHORT).show();
+                if (response.isSuccessful()) {
+                    List<CountrySearchResponse> allData = response.body();
+                    Log.e("MyResponse",response.raw().toString());
+                    Toast.makeText(getContext(), "Country open", Toast.LENGTH_SHORT).show();
+
+                    recyclerView.setAdapter(new CountryRecyclerViewAdapter(allData,getContext()));
+//                    Toast.makeText(getContext(), "Successful", Toast.LENGTH_SHORT).show();
                 }
                 else {
                     Toast.makeText(getContext(), "Data not successful", Toast.LENGTH_SHORT).show();
@@ -62,7 +68,9 @@ public class CountryFragment extends Fragment {
             }
 
             @Override
-            public void onFailure(Call<List<CovidDataAfricaResponse>> call, Throwable t) {
+            public void onFailure(Call<List<CountrySearchResponse>> call, Throwable t) {
+                Log.e("Error",t.getMessage());
+                Toast.makeText(getContext(), "Country fail" + t.getMessage(), Toast.LENGTH_LONG).show();
 
 
             }

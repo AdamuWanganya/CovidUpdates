@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.CovidUpdates">
         <activity
+            android:name=".VaccineNews"
+            android:exported="false" />
+        <activity
+            android:name=".CountryDetails"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

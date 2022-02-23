@@ -1,5 +1,8 @@
 package tech.adamu.covidupdates.network;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.io.IOException;
 
 import okhttp3.Interceptor;
@@ -29,10 +32,15 @@ public class CovidClient {
                 })
                 .build();
 
+        Gson gson = new GsonBuilder()
+                .setLenient()
+                .create();
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("https://vaccovid-coronavirus-vaccine-and-treatment-tracker.p.rapidapi.com/api/")
+
                 .client(okHttpClient)
-                .addConverterFactory(GsonConverterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create(gson))
                 .build();
 
         return retrofit.create(CovidApi.class) ;
