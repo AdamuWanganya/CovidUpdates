@@ -18,7 +18,7 @@ import butterknife.ButterKnife;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
-import tech.adamu.covidupdates.adapters.VaccineRecylerViewAdapter;
+import tech.adamu.covidupdates.adapters.FavoriteRecyclerAdapter;
 import tech.adamu.covidupdates.models.news.News;
 import tech.adamu.covidupdates.models.news.VaccineSearchResponse;
 import tech.adamu.covidupdates.network.CovidApi;
@@ -52,7 +52,7 @@ public class VaccineFragment extends Fragment {
                 if (response.isSuccessful()) {
                     List<News> responseList = response.body().getNews();
 
-                    recyclerView.setAdapter(new VaccineRecylerViewAdapter(responseList, getContext()));
+                    recyclerView.setAdapter(new FavoriteRecyclerAdapter(responseList, getContext()));
                     Toast.makeText(getContext(), "News is successful", Toast.LENGTH_SHORT).show();
 
                 } else {

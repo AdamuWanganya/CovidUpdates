@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.viewpager.widget.ViewPager;
 
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import com.google.android.material.tabs.TabLayout;
@@ -15,6 +16,8 @@ import butterknife.ButterKnife;
 import tech.adamu.covidupdates.adapters.PagerAdapter;
 
 public class MainActivity extends AppCompatActivity {
+    private SharedPreferences mSharedPreferences;
+    private SharedPreferences.Editor mEditor;
 
     @BindView(R.id.tabLayout) TabLayout tabLayout;
     @BindView(R.id.viewpager ) ViewPager viewPager;
@@ -39,5 +42,9 @@ public class MainActivity extends AppCompatActivity {
         PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(),fragments,titles);
         viewPager.setAdapter(pagerAdapter);
         tabLayout.setupWithViewPager(viewPager);
+    }
+
+    private void addToSharedPreferences(ArrayList<String> news) {
+        mEditor.putString(Constants.PREFERENCES_NEWS_KEY,"news").apply();
     }
 }

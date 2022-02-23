@@ -68,8 +68,8 @@
 
             <TextView
                 android:id="@+id/total_cases"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="54dp"
+                android:layout_height="10dp"
                 android:layout_marginTop="16dp"
                 android:text="Reference"
                 app:layout_constraintBottom_toBottomOf="parent"

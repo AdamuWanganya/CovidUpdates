@@ -1,8 +1,8 @@
 package tech.adamu.covidupdates.adapters;
 
+
 import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,14 +19,13 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 import tech.adamu.covidupdates.R;
-import tech.adamu.covidupdates.VaccineNews;
 import tech.adamu.covidupdates.models.news.News;
 
-public class VaccineRecylerViewAdapter extends RecyclerView.Adapter<FavoriteRecyclerAdapter.ViewHolder> {
+public class FavoriteRecyclerAdapter extends RecyclerView.Adapter<FavoriteRecyclerAdapter.ViewHolder> {
     List<News> newsList;
     Context context;
 
-    public VaccineRecylerViewAdapter(List<News> newsList, Context context) {
+    public FavoriteRecyclerAdapter(List<News> newsList, Context context) {
         this.newsList = newsList;
         this.context = context;
     }
@@ -45,16 +44,16 @@ public class VaccineRecylerViewAdapter extends RecyclerView.Adapter<FavoriteRecy
         holder.title.setText(newsList.get(position).getTitle());
         holder.pubdate.setText(newsList.get(position).getPubDate().trim());
         holder.content.setText(newsList.get(position).getContent());
-       holder.url.setText(newsList.get(position).getLink());
-       holder.reference.setText(newsList.get(position).getReference());
-       holder.cardview.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
-               Intent intent = new Intent(context, VaccineNews.class);
-               intent.putExtra("Vaccine",newsList.get(position));
-               context.startActivity(intent);
-           }
-       });
+        holder.url.setText(newsList.get(position).getLink());
+        holder.reference.setText(newsList.get(position).getReference());
+//        holder.cardview.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Intent intent = new Intent(context, VaccineNews.class);
+//                intent.putExtra("Vaccine",newsList.get(position));
+//                context.startActivity(intent);
+//            }
+//        });
 
     }
 
