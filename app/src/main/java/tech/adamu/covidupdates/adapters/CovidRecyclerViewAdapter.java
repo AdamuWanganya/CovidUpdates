@@ -1,7 +1,6 @@
 package tech.adamu.covidupdates.adapters;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,10 +11,9 @@ import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
-import java.util.zip.Inflater;
 
 import tech.adamu.covidupdates.R;
-import tech.adamu.covidupdates.models.CovidDataAfricaResponse;
+import tech.adamu.covidupdates.models.data.CovidDataAfricaResponse;
 
 public class CovidRecyclerViewAdapter extends RecyclerView.Adapter<CovidRecyclerViewAdapter.ViewHolder> {
     List<CovidDataAfricaResponse> dataList;

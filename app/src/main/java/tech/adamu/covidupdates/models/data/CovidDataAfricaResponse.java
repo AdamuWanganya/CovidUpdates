@@ -1,5 +1,5 @@
 
-package tech.adamu.covidupdates.models;
+package tech.adamu.covidupdates.models.data;
 
 //import javax.annotation.Generated;
 
