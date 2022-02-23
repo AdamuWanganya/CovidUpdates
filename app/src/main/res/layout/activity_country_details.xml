@@ -1,9 +1,166 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.cardview.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:padding="8dp"
+    android:elevation="12dp"
+    app:cardElevation="12dp"
+    android:layout_margin="24dp"
+    android:id="@+id/cardView"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".CountryDetails">
+    android:layout_height="wrap_content"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent"
+    app:cardCornerRadius="4dp"
+    app:layout_constraintVertical_bias="0.0">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="319dp"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+
+        <TextView
+            android:id="@+id/country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="0.5dp"
+            android:text="Country"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/serious_critical"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:padding="0.5dp"
+            android:text="Serious Critical"
+            android:textSize="16sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/active_cases" />
+
+        <TextView
+            android:id="@+id/active_cases"
+            android:layout_width="104dp"
+            android:layout_height="18dp"
+
+            android:layout_marginTop="24dp"
+            android:text="Active Cases"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/country" />
+
+        <TextView
+            android:id="@+id/total_cases"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Total Cases"
+            app:layout_constraintEnd_toEndOf="@+id/total_tests"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/total_tests"
+            app:layout_constraintTop_toBottomOf="@+id/total_tests" />
+
+        <TextView
+            android:id="@+id/total_tests"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="72dp"
+            android:text="Total Tests"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/new_deaths"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="New Deaths"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/serious_critical" />
+
+        <TextView
+            android:id="@+id/total_deaths"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Total Deaths"
+            app:layout_constraintEnd_toEndOf="@+id/total_cases"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="@+id/total_cases"
+            app:layout_constraintTop_toBottomOf="@+id/total_cases" />
+
+        <TextView
+            android:id="@+id/population"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="Population"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/new_deaths" />
+
+        <TextView
+            android:id="@+id/recovery_propation"
+            android:layout_width="128dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="20dp"
+            android:text="Recovery proporation"
+            app:layout_constraintEnd_toEndOf="@+id/total_deaths"
+            app:layout_constraintHorizontal_bias="0.183"
+            app:layout_constraintStart_toStartOf="@+id/total_deaths"
+            app:layout_constraintTop_toBottomOf="@+id/total_deaths" />
+
+        <TextView
+            android:id="@+id/total_recovery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="Total Recovery"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/population" />
+
+        <TextView
+            android:id="@+id/case_fatality"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:text="Case Fatality Rate"
+            app:layout_constraintEnd_toEndOf="@+id/recovery_propation"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/recovery_propation"
+            app:layout_constraintTop_toBottomOf="@+id/recovery_propation" />
+
+        <TextView
+            android:id="@+id/test_percentage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Test Percentage"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/total_recovery" />
+
+        <TextView
+            android:id="@+id/new_recovery"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Recovery"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/case_fatality"
+            app:layout_constraintStart_toStartOf="@+id/case_fatality" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
+
+

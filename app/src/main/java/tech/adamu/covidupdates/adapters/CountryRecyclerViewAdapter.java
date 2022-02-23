@@ -1,6 +1,8 @@
 package tech.adamu.covidupdates.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +14,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
+import tech.adamu.covidupdates.CountryDetails;
 import tech.adamu.covidupdates.R;
 import tech.adamu.covidupdates.models.data.CountrySearchResponse;
 
@@ -34,10 +37,18 @@ public class CountryRecyclerViewAdapter extends RecyclerView.Adapter<CountryRecy
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+    public void onBindViewHolder(@NonNull ViewHolder holder, @SuppressLint("RecyclerView") int position) {
         holder.countryName.setText(dataList.get(position).getCountry());
         holder.countryStatistics.setText("Active Cases: " + dataList.get(position).getActiveCases().toString());
 //        holder.countryStatistics.setText(dataList.get(position).getNewDeaths());
+        holder.constraintLayout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, CountryDetails.class);
+                intent.putExtra("Country",dataList.get(position));
+                context.startActivity(intent);
+            }
+        });
        
     }
 

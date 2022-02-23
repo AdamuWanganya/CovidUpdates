@@ -1,8 +1,6 @@
 package tech.adamu.covidupdates.adapters;
 
-import android.annotation.SuppressLint;
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +15,6 @@ import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
-import retrofit2.Response;
 import tech.adamu.covidupdates.R;
 import tech.adamu.covidupdates.models.news.News;
 
@@ -66,11 +63,11 @@ public class VaccineRecylerViewAdapter extends RecyclerView.Adapter<VaccineRecyl
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             imageView = itemView.findViewById(R.id.newsimage);
-            title= itemView.findViewById(R.id.title);
-            pubdate= itemView.findViewById(R.id.pubdate);
-            content = itemView.findViewById(R.id.content);
-            url = itemView.findViewById(R.id.url);
-            reference = itemView.findViewById(R.id.reference);
+            title= itemView.findViewById(R.id.country);
+            pubdate= itemView.findViewById(R.id.total_tests);
+            content = itemView.findViewById(R.id.serious_critical);
+            url = itemView.findViewById(R.id.active_cases);
+            reference = itemView.findViewById(R.id.total_cases);
             constraintLayout = itemView.findViewById(R.id.constraintLayout);
 
         }
